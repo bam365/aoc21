@@ -1,0 +1,4 @@
+(executable
+ (name aoc21)
+ (public_name aoc21)
+ (libraries aoclib containers))
