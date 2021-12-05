@@ -6,10 +6,10 @@ module Command = struct
 
   let parse = 
     let open CCParse in
-    let parse_command cmd_str f = CCParse.(
+    let parse_command cmd_str f = 
       string cmd_str *> skip_white *> Aoccore.Parsers.positiveInt
       |> map f
-    ) in
+    in 
     parse_command "forward" (fun i -> Forward(i))
     <|> parse_command "down" (fun i -> Down(i))
     <|> parse_command "up" (fun i -> Up(i)) 
