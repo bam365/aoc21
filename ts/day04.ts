@@ -1,6 +1,5 @@
-import { number } from "fp-ts"
 import { pipe } from "fp-ts/function"
-import { MonoidAll, MonoidAny } from "fp-ts/boolean"
+import { MonoidAny } from "fp-ts/boolean"
 import { MonoidSum as NumSum, Eq as NumEq } from "fp-ts/number"
 import { concatAll } from "fp-ts/Monoid"
 import * as Opt from "fp-ts/Option"
