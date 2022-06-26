@@ -28,4 +28,8 @@ export module ROArrayUtil {
             return [g, ...group(sep)(newXs)]
         }
     }
+
+    export const inclusiveRange = (from: number, to: number): ReadonlyArray<number> => 
+        Array.from({ length: (to - from) + 1 }, (_, i) => i + from)
+   
 }
