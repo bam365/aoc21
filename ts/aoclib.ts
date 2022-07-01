@@ -14,6 +14,9 @@ export const readNumbers = (): readonly number[] => pipe(
     ROArray.map(s => Number(s))
 )
 
+export const modifyN = <T>(n: number, f: (v: T) => T) => (init: T): T => 
+    n <= 0 ? init : modifyN(n - 1, f)(f(init))
+
 export module ROArrayUtil {
     export const group = <T>(sep: (v: T) => boolean) => (xs: ReadonlyArray<T>): ReadonlyArray<ReadonlyArray<T>> => {
         if (xs.length === 0) {
