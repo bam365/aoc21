@@ -31,5 +31,10 @@ export module ROArrayUtil {
 
     export const inclusiveRange = (from: number, to: number): ReadonlyArray<number> => 
         Array.from({ length: (to - from) + 1 }, (_, i) => i + from)
-   
+
+    export const count = <T>(pred: (v: T) => boolean) => (xs: ReadonlyArray<T>): number => pipe(
+        xs,
+        ROArray.filter(pred),
+        ROArray.size,
+    )
 }
