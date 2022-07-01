@@ -10,6 +10,7 @@
   "author": "Blake Mitchell",
   "license": "ISC",
   "dependencies": {
+    "decimal.js": "^10.3.1",
     "fp-ts": "^2.11.5",
     "parser-ts": "^0.6.16",
     "ts-pattern": "^4.0.3"

@@ -52,18 +52,13 @@ const generateN = (n: number) => (fm: FishModel): FishModel =>
 
 const main = () => {
     const input = readInput()
-    const answer = pipe(
+    const answerNGenerations = (n: number) => pipe(
         FishModel.fromArray(input),
-        generateN(80),
+        generateN(n),
         FishModel.count
     )
-    const answer2 = pipe(
-        FishModel.fromArray(input),
-        generateN(256),
-        FishModel.count
-    )
-    console.log(answer)
-    console.log(answer2)
+    console.log(answerNGenerations(80))
+    console.log(answerNGenerations(256))
 }
 
 main()
