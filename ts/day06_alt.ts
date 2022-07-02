@@ -5,11 +5,6 @@ import * as ROArray from "fp-ts/ReadonlyArray"
 import { modifyN, readLines } from "./aoclib"
 
 
-const generate = (xs: ReadonlyArray<number>): ReadonlyArray<number> => pipe(
-    xs,
-    ROArray.chain(v => v > 0 ? [v - 1] : [8, 6])
-)
-
 export const readInput = (): ReadonlyArray<number> => {
     const input = readLines()[0]
     return pipe(
@@ -22,7 +17,7 @@ export const readInput = (): ReadonlyArray<number> => {
 const main = () => {
     const answer = pipe(
         readInput(),
-        modifyN(80, generate),
+        modifyN(80, ROArray.chain(v => v > 0 ? [v - 1] : [8, 6])),
         ROArray.size
     )
     console.log(answer)
